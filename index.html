@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Scrolling Text WebApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFFFFF">
+</head>
+<body>
+    <div id="menu">
+        <textarea id="textInput" placeholder="Enter your text here"></textarea>
+        <label for="textColor">Text Color:</label>
+        <input type="color" id="textColor" value="#FFFFFF">
+        <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" value="#000000">
+        <label for="textSize">Text Size:</label>
+        <input type="range" id="textSize" min="10" max="100" value="30">
+        <label for="textSpeed">Text Speed:</label>
+        <input type="range" id="textSpeed" min="1" max="100" value="30">
+        <button id="okButton">OK</button>
+    </div>
+
+    <div id="scrollingTextContainer">
+        <span id="scrollingText">vfvfv</span>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, (error) => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

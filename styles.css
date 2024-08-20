@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    user-select: none; /* Prevent text selection */
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFFFFF; /* Set text color to white */
+    z-index: 1000; /* Make sure menu appears on top */
+}
+
+#textInput {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 100px;
+    resize: none;
+}
+
+#okButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#scrollingTextContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#scrollingText {
+    display: inline-block;
+    padding-left: 50vw;
+    animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
